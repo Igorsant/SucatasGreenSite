@@ -11,12 +11,17 @@ const BodyApp = styled.div`
   background-size: cover;
   opacity: 0.8;
   overflow-y: auto;
+  overflow-x: hidden;
 `;
 
 const StyledContent = styled.div<{ height: string; backgroundColor: string }>`
   background-color: ${(props) => props.backgroundColor};
   height: ${(props) => props.height};
-  width: 50%;
+  width: 100%;
+
+  @media screen and (min-width: 600px) {
+    width: 50%;
+  }
   margin: 20px auto;
   border-radius: 10px;
   box-shadow: 0px 5px 5px #000000;

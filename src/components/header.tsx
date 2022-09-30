@@ -3,7 +3,10 @@ import logo from "../assets/logo.png";
 import heart from "../assets/heart.jpg";
 
 const StyledHeader = styled.div`
-  height: 100px;
+  @media screen and (min-width: 600px) {
+    height: 100px;
+  }
+  height: 60px;
   background-color: #00000092;
   display: flex;
   justify-content: space-between;
@@ -12,7 +15,10 @@ const StyledHeader = styled.div`
 const StyledUl = styled.ul`
   display: flex;
   align-items: center;
-  font-size: 30px;
+  @media screen and (min-width: 600px) {
+    font-size: 30px;
+  }
+  font-size: 15px;
 `;
 
 const StyledLi = styled.li`
@@ -21,12 +27,26 @@ const StyledLi = styled.li`
   border-radius: 10px;
 `;
 
+const StyledLogo = styled.img`
+  @media screen and (min-width: 600px) {
+    height: 100px;
+  }
+  height: 60px;
+`;
+
+const StyledLinkLogo = styled.a`
+  @media screen and (min-width: 600px) {
+    margin-left: 100px;
+  }
+  margin-left: 50px;
+`;
+
 export const Header = () => {
   return (
     <StyledHeader>
-      <a href="/" style={{ marginLeft: "100px" }}>
-        <img src={logo} alt="" style={{ height: "100px" }} />
-      </a>
+      <StyledLinkLogo href="/">
+        <StyledLogo src={logo} alt="logo sucatas green" />
+      </StyledLinkLogo>
       <StyledUl>
         <StyledLi>
           <h5>Contate me</h5>
